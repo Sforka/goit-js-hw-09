@@ -52,20 +52,20 @@ class Timer {
   constructor() {
     this.timerId = null;
     this.isActive = false;
-    refs.btnStart.disabled = true;
   }
 
   startTimer() {
     if (this.isActive) {
       return;
     }
+    refs.btnStart.disabled = true;
     this.isActive = true;
     this.timerId = setInterval(() => {
       const currentTime = Date.now();
       const delta = selectedTime - currentTime;
       const components = convertMs(delta);
       this.updateTime(components);
-      if (delta <= 0) {
+      if (delta <= 1000) {
         this.stopTimer();
       }
     }, 1000);
