@@ -11,6 +11,7 @@ const refs = {
   minutes: document.querySelector('span[data-minutes]'),
   seconds: document.querySelector('span[data-seconds]'),
 };
+var selectedTime = new Date()
 refs.btnStart.disabled = true;
 
 const options = {
@@ -22,8 +23,9 @@ const options = {
   onClose(selectedDates) {
     const time = selectedDates[0].getTime() - new Date().getTime();
     if (time <= 0) {
-       selectedDates[0] = new Date();
-      return window.alert('Please choose a date in the future');
+       selectedDates = new Date();
+      window.alert('Please choose a date in the future');
+      return;
     }
     selectedTime = selectedDates[0];
     refs.btnStart.disabled = false;

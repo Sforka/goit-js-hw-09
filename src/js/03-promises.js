@@ -28,9 +28,10 @@ function onSubmitClick(e) {
   let delay = Number(refs.inputDelay.value);
   let step = Number(refs.inputStep.value);
   let amount = Number(refs.inputAmount.value);
+  console.log(step);
 
-  if ((refs.inputDelay.value < 0, refs.inputStep.value < 0, refs.inputAmount.value < 0)) {
-    return Notify.warning('Please enter enter correct data');
+  if ((refs.inputDelay.value < 0 || refs.inputStep.value < 0 || refs.inputAmount.value < 0)) {
+    return Notify.warning('Please enter correct data');
   }
   for (let position = 1; position <= amount; position += 1) {
     createPromise(position, delay)
