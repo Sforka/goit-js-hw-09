@@ -7,7 +7,7 @@ btnStop.addEventListener('click', changeStop);
 
 function changeStart() {
   changeColor = setInterval(() => {
-    body.style.backgroundColor = getRandomHexColor()
+    body.style.backgroundColor = getRandomHexColor();
   }, 1000);
   btnStart.disabled = true;
 }
