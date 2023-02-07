@@ -80,10 +80,10 @@ class Timer {
   }
 
   updateTime({ days, hours, minutes, seconds }) {
-    refs.days.textContent = days;
-    refs.hours.textContent = hours;
-    refs.minutes.textContent = minutes;
-    refs.seconds.textContent = seconds;
+    refs.days.textContent = ('0' + days).slice(-2);;
+    refs.hours.textContent = ('0' + hours).slice(-2);;
+    refs.minutes.textContent = ('0' + minutes).slice(-2);;
+    refs.seconds.textContent = ('0' + seconds).slice(-2);;
   }
 }
 const timer = new Timer();
